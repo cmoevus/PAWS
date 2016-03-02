@@ -13,7 +13,6 @@ import threading
 from Queue import PriorityQueue
 from math import ceil
 import numpy as np
-from functools import partial
 import Phidgets
 from Phidgets.Devices.Stepper import Stepper
 import gi
@@ -180,13 +179,20 @@ class Hardware(Stepper):
     stop = __del__
 
 
+class FakeHardware(object):
+    """Useful for debugging GUI when no hardware is plugged in."""
+
+    def getMotorCount(self):
+        """Lies."""
+        return 4
+
+
 class GUI(Gtk.Builder):
     """Graphical User Interface for interacting with a PAWS."""
 
     #
-    # GUI related functions
+    # GUI related methods
     #
-
     def __init__(self, paws, gui_file="GUI.glade", *args):
         """Initiate the parent objects and do basic definitions."""
         # Connect the GUI to handlers
@@ -229,7 +235,6 @@ class GUI(Gtk.Builder):
     #
     # Shuttering related methods
     #
-
     def get_shuttering_parameters(self):
         """Return the shuttering parameters from the GUI."""
         loops = self.get_object("loops").get_value()
@@ -309,7 +314,6 @@ class GUI(Gtk.Builder):
     #
     # Settings related methods
     #
-
     def show_settings(self, *args):
         """Open the settings window."""
         self.get_object('settings_window').show()
@@ -323,10 +327,11 @@ class GUI(Gtk.Builder):
         settings = self.get_object("settings_shutters")
         widgets = {
             'active': settings.get_child_at(i + 1, 1),
-            'step': settings.get_child_at(i + 1, 2),
-            'angle': settings.get_child_at(i + 1, 3),
-            'direction': settings.get_child_at(i + 1, 4),
-            'state': settings.get_child_at(i + 1, 5),
+            'name': settings.get_child_at(i + 1, 2),
+            'step': settings.get_child_at(i + 1, 3),
+            'angle': settings.get_child_at(i + 1, 4),
+            'direction': settings.get_child_at(i + 1, 5),
+            'state': settings.get_child_at(i + 1, 6),
         }
         return widgets
 
@@ -343,6 +348,16 @@ class GUI(Gtk.Builder):
 
     def update_paws_settings(self, *args):
         """Update the settings in PAWS using the settings in the GUI."""
+        # Update general settings
+        self.update_frequency = self.get_object('update_frequency').get_value()
+        self.paws.todo.precision = self.get_object('precision').get_value()
+
+        # Put the GUI-specific settings in the PAWS object for saving them.
+        self.paws.gui_settings = {
+            'update_frequency': self.update_frequency,
+            'shutter_names': {0: "0", 1: "1", 2: "2", 3: "3"}
+        }
+
         # Update Shutters settings
         shutters = dict()
         if self.paws.hardware is not None:
@@ -354,21 +369,13 @@ class GUI(Gtk.Builder):
                     shutters[i]['angle'] = widgets['angle'].get_value()
                     shutters[i]['direction'] = widgets['direction'].get_active()
                     shutters[i]['state'] = widgets['state'].get_active()
+                    self.paws.gui_settings["shutter_names"][i] = widgets['name'].get_text()
         if len(shutters) == 0:
             shutters = None
         self.paws.setup_shutters(shutters)
 
         # Update switches
         self.pair_shutter_switches()
-
-        # Update general settings
-        self.update_frequency = self.get_object('update_frequency').get_value()
-        self.paws.todo.precision = self.get_object('precision').get_value()
-
-        # Put the GUI-specific settings in the PAWS object for saving them.
-        self.paws.gui_settings = {
-            'update_frequency': self.update_frequency,
-        }
 
     def update_gui_settings(self, *args):
         """Update the settings in the GUI using the settings from PAWS."""
@@ -382,6 +389,7 @@ class GUI(Gtk.Builder):
                     widgets['angle'].set_value(shutter.angle)
                     widgets['direction'].set_active(shutter.direction)
                     widgets['state'].set_active(shutter.state)
+                    widgets['name'].set_text(self.paws.gui_settings['shutter_names'][i])
                 else:
                     widgets['active'].set_active(False)
 
@@ -399,7 +407,6 @@ class GUI(Gtk.Builder):
     #
     # Shutter switches related methods
     #
-
     def get_shutter_switch(self, i):
         """Return widgets for shutter <i>."""
         return self.get_object("switches").get_child_at(i, 0).get_children()[1]
@@ -423,14 +430,18 @@ class GUI(Gtk.Builder):
                 if i in self.paws.shutters.keys():
                     shutter = self.paws.shutters[i]
                     switch = self.get_shutter_switch(i)
+                    box = self.get_shutter_switchbox(i)
 
                     # Switch visibility
-                    self.get_shutter_switchbox(i).show()
+                    box.show()
                     switch.set_active(shutter.state)
 
                     # Add GUI to the shutter
                     if shutter.gui is None:
                         shutter.gui = switch
+
+                    # Setup the shutter's name
+                    box.get_children()[0].set_text(self.get_shutter_settings_widgets(i)['name'].get_text())
 
                     # Sync state
                     switch.set_state(shutter.state)

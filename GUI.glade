@@ -128,7 +128,7 @@ Whether the shutter is currently opened (OFF) or closed (ON).</property>
               </object>
               <packing>
                 <property name="left_attach">0</property>
-                <property name="top_attach">5</property>
+                <property name="top_attach">6</property>
               </packing>
             </child>
             <child>
@@ -139,7 +139,7 @@ Whether the shutter is currently opened (OFF) or closed (ON).</property>
               </object>
               <packing>
                 <property name="left_attach">1</property>
-                <property name="top_attach">5</property>
+                <property name="top_attach">6</property>
               </packing>
             </child>
             <child>
@@ -150,7 +150,7 @@ Whether the shutter is currently opened (OFF) or closed (ON).</property>
               </object>
               <packing>
                 <property name="left_attach">2</property>
-                <property name="top_attach">5</property>
+                <property name="top_attach">6</property>
               </packing>
             </child>
             <child>
@@ -161,7 +161,7 @@ Whether the shutter is currently opened (OFF) or closed (ON).</property>
               </object>
               <packing>
                 <property name="left_attach">3</property>
-                <property name="top_attach">5</property>
+                <property name="top_attach">6</property>
               </packing>
             </child>
             <child>
@@ -172,7 +172,7 @@ Whether the shutter is currently opened (OFF) or closed (ON).</property>
               </object>
               <packing>
                 <property name="left_attach">4</property>
-                <property name="top_attach">5</property>
+                <property name="top_attach">6</property>
               </packing>
             </child>
             <child>
@@ -183,7 +183,7 @@ Whether the shutter is currently opened (OFF) or closed (ON).</property>
               </object>
               <packing>
                 <property name="left_attach">4</property>
-                <property name="top_attach">4</property>
+                <property name="top_attach">5</property>
               </packing>
             </child>
             <child>
@@ -194,7 +194,7 @@ Whether the shutter is currently opened (OFF) or closed (ON).</property>
               </object>
               <packing>
                 <property name="left_attach">3</property>
-                <property name="top_attach">4</property>
+                <property name="top_attach">5</property>
               </packing>
             </child>
             <child>
@@ -205,7 +205,7 @@ Whether the shutter is currently opened (OFF) or closed (ON).</property>
               </object>
               <packing>
                 <property name="left_attach">2</property>
-                <property name="top_attach">4</property>
+                <property name="top_attach">5</property>
               </packing>
             </child>
             <child>
@@ -216,7 +216,7 @@ Whether the shutter is currently opened (OFF) or closed (ON).</property>
               </object>
               <packing>
                 <property name="left_attach">1</property>
-                <property name="top_attach">4</property>
+                <property name="top_attach">5</property>
               </packing>
             </child>
             <child>
@@ -235,7 +235,7 @@ The direction in which to go. "ON" may mean up or down depending on the motor's 
               </object>
               <packing>
                 <property name="left_attach">0</property>
-                <property name="top_attach">4</property>
+                <property name="top_attach">5</property>
               </packing>
             </child>
             <child>
@@ -254,7 +254,7 @@ Rotation to do when switching state.</property>
               </object>
               <packing>
                 <property name="left_attach">0</property>
-                <property name="top_attach">3</property>
+                <property name="top_attach">4</property>
               </packing>
             </child>
             <child>
@@ -273,7 +273,7 @@ As given by manufacturer.</property>
               </object>
               <packing>
                 <property name="left_attach">0</property>
-                <property name="top_attach">2</property>
+                <property name="top_attach">3</property>
               </packing>
             </child>
             <child>
@@ -287,7 +287,6 @@ Is this shutter used?</property>
                 <property name="use_markup">True</property>
                 <property name="justify">center</property>
                 <property name="wrap">True</property>
-                <property name="ellipsize">end</property>
                 <property name="width_chars">30</property>
                 <property name="max_width_chars">30</property>
               </object>
@@ -309,7 +308,7 @@ Is this shutter used?</property>
               </object>
               <packing>
                 <property name="left_attach">1</property>
-                <property name="top_attach">2</property>
+                <property name="top_attach">3</property>
               </packing>
             </child>
             <child>
@@ -323,7 +322,7 @@ Is this shutter used?</property>
               </object>
               <packing>
                 <property name="left_attach">2</property>
-                <property name="top_attach">3</property>
+                <property name="top_attach">4</property>
               </packing>
             </child>
             <child>
@@ -338,7 +337,7 @@ Is this shutter used?</property>
               </object>
               <packing>
                 <property name="left_attach">2</property>
-                <property name="top_attach">2</property>
+                <property name="top_attach">3</property>
               </packing>
             </child>
             <child>
@@ -352,7 +351,7 @@ Is this shutter used?</property>
               </object>
               <packing>
                 <property name="left_attach">3</property>
-                <property name="top_attach">3</property>
+                <property name="top_attach">4</property>
               </packing>
             </child>
             <child>
@@ -367,7 +366,7 @@ Is this shutter used?</property>
               </object>
               <packing>
                 <property name="left_attach">3</property>
-                <property name="top_attach">2</property>
+                <property name="top_attach">3</property>
               </packing>
             </child>
             <child>
@@ -381,7 +380,7 @@ Is this shutter used?</property>
               </object>
               <packing>
                 <property name="left_attach">4</property>
-                <property name="top_attach">3</property>
+                <property name="top_attach">4</property>
               </packing>
             </child>
             <child>
@@ -396,7 +395,7 @@ Is this shutter used?</property>
               </object>
               <packing>
                 <property name="left_attach">4</property>
-                <property name="top_attach">2</property>
+                <property name="top_attach">3</property>
               </packing>
             </child>
             <child>
@@ -426,19 +425,6 @@ Is this shutter used?</property>
               </packing>
             </child>
             <child>
-              <object class="GtkLabel" id="settings_shutters_label0">
-                <property name="visible">True</property>
-                <property name="can_focus">False</property>
-                <property name="label" translatable="yes">&lt;b&gt;Shutter ID&lt;/b&gt;</property>
-                <property name="use_markup">True</property>
-                <property name="wrap">True</property>
-              </object>
-              <packing>
-                <property name="left_attach">0</property>
-                <property name="top_attach">0</property>
-              </packing>
-            </child>
-            <child>
               <object class="GtkSwitch" id="switch1">
                 <property name="visible">True</property>
                 <property name="can_focus">True</property>
@@ -465,50 +451,6 @@ Is this shutter used?</property>
               </packing>
             </child>
             <child>
-              <object class="GtkLabel" id="label1">
-                <property name="visible">True</property>
-                <property name="can_focus">False</property>
-                <property name="label" translatable="yes">0</property>
-              </object>
-              <packing>
-                <property name="left_attach">1</property>
-                <property name="top_attach">0</property>
-              </packing>
-            </child>
-            <child>
-              <object class="GtkLabel" id="label2">
-                <property name="visible">True</property>
-                <property name="can_focus">False</property>
-                <property name="label" translatable="yes">1</property>
-              </object>
-              <packing>
-                <property name="left_attach">2</property>
-                <property name="top_attach">0</property>
-              </packing>
-            </child>
-            <child>
-              <object class="GtkLabel" id="label3">
-                <property name="visible">True</property>
-                <property name="can_focus">False</property>
-                <property name="label" translatable="yes">2</property>
-              </object>
-              <packing>
-                <property name="left_attach">3</property>
-                <property name="top_attach">0</property>
-              </packing>
-            </child>
-            <child>
-              <object class="GtkLabel" id="label4">
-                <property name="visible">True</property>
-                <property name="can_focus">False</property>
-                <property name="label" translatable="yes">3</property>
-              </object>
-              <packing>
-                <property name="left_attach">4</property>
-                <property name="top_attach">0</property>
-              </packing>
-            </child>
-            <child>
               <object class="GtkSpinButton" id="spinbutton5">
                 <property name="visible">True</property>
                 <property name="can_focus">True</property>
@@ -520,7 +462,154 @@ Is this shutter used?</property>
               </object>
               <packing>
                 <property name="left_attach">1</property>
-                <property name="top_attach">3</property>
+                <property name="top_attach">4</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkLabel" id="label2">
+                <property name="visible">True</property>
+                <property name="can_focus">False</property>
+                <property name="label" translatable="yes">0</property>
+              </object>
+              <packing>
+                <property name="left_attach">1</property>
+                <property name="top_attach">0</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkLabel" id="label3">
+                <property name="visible">True</property>
+                <property name="can_focus">False</property>
+                <property name="label" translatable="yes">1</property>
+              </object>
+              <packing>
+                <property name="left_attach">2</property>
+                <property name="top_attach">0</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkLabel" id="label4">
+                <property name="visible">True</property>
+                <property name="can_focus">False</property>
+                <property name="label" translatable="yes">2</property>
+              </object>
+              <packing>
+                <property name="left_attach">3</property>
+                <property name="top_attach">0</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkLabel" id="label17">
+                <property name="visible">True</property>
+                <property name="can_focus">False</property>
+                <property name="label" translatable="yes">3</property>
+              </object>
+              <packing>
+                <property name="left_attach">4</property>
+                <property name="top_attach">0</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkLabel" id="settings_shutters_label6">
+                <property name="visible">True</property>
+                <property name="can_focus">False</property>
+                <property name="label" translatable="yes">&lt;b&gt;Physical ID&lt;/b&gt;
+The number on the Phidgets board.</property>
+                <property name="use_markup">True</property>
+                <property name="justify">center</property>
+                <property name="wrap">True</property>
+              </object>
+              <packing>
+                <property name="left_attach">0</property>
+                <property name="top_attach">0</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkLabel" id="settings_shutters_label0">
+                <property name="visible">True</property>
+                <property name="can_focus">False</property>
+                <property name="label" translatable="yes">&lt;b&gt;Name&lt;/b&gt;
+Easy to locate identifier</property>
+                <property name="use_markup">True</property>
+                <property name="justify">center</property>
+                <property name="wrap">True</property>
+              </object>
+              <packing>
+                <property name="left_attach">0</property>
+                <property name="top_attach">2</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkEntry" id="entry1">
+                <property name="visible">True</property>
+                <property name="can_focus">True</property>
+                <property name="halign">center</property>
+                <property name="valign">center</property>
+                <property name="has_frame">False</property>
+                <property name="width_chars">10</property>
+                <property name="max_width_chars">15</property>
+                <property name="text" translatable="yes">0</property>
+                <property name="overwrite_mode">True</property>
+                <property name="caps_lock_warning">False</property>
+              </object>
+              <packing>
+                <property name="left_attach">1</property>
+                <property name="top_attach">2</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkEntry" id="entry2">
+                <property name="visible">True</property>
+                <property name="can_focus">True</property>
+                <property name="halign">center</property>
+                <property name="valign">center</property>
+                <property name="has_frame">False</property>
+                <property name="width_chars">10</property>
+                <property name="max_width_chars">15</property>
+                <property name="text" translatable="yes">1</property>
+                <property name="overwrite_mode">True</property>
+                <property name="caps_lock_warning">False</property>
+              </object>
+              <packing>
+                <property name="left_attach">2</property>
+                <property name="top_attach">2</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkEntry" id="entry3">
+                <property name="visible">True</property>
+                <property name="can_focus">True</property>
+                <property name="halign">center</property>
+                <property name="valign">center</property>
+                <property name="margin_bottom">3</property>
+                <property name="has_frame">False</property>
+                <property name="width_chars">10</property>
+                <property name="max_width_chars">15</property>
+                <property name="text" translatable="yes">2</property>
+                <property name="overwrite_mode">True</property>
+                <property name="caps_lock_warning">False</property>
+              </object>
+              <packing>
+                <property name="left_attach">3</property>
+                <property name="top_attach">2</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkEntry" id="entry4">
+                <property name="visible">True</property>
+                <property name="can_focus">True</property>
+                <property name="halign">center</property>
+                <property name="valign">center</property>
+                <property name="has_frame">False</property>
+                <property name="width_chars">10</property>
+                <property name="max_width_chars">15</property>
+                <property name="text" translatable="yes">3</property>
+                <property name="overwrite_mode">True</property>
+                <property name="caps_lock_warning">False</property>
+              </object>
+              <packing>
+                <property name="left_attach">4</property>
+                <property name="top_attach">2</property>
               </packing>
             </child>
           </object>
